@@ -6,20 +6,27 @@ interface IconProps {
   size?: number;
   color?: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
-export const Icon: React.FC<IconProps> = ({
+export const Icon = ({
   name,
   size = 24,
   color = "black",
   onClick,
-}) => {
+  style = {},
+}: IconProps) => {
   const IconComponent = Icons[contentTypes[name]];
 
   return IconComponent ? (
-    <div>
-      <IconComponent size={size} color={color} onClick={onClick} />
-    </div>
+    <>
+      <IconComponent
+        size={size}
+        color={color}
+        onClick={onClick}
+        style={style}
+      />
+    </>
   ) : (
     <div>Icono no encontrado</div>
   );

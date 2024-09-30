@@ -1,23 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SpeedDialExample } from "./SpeedDialExample";
+import { SpeedDial } from "../../components/SpeedDial";
+import { IconsTypes } from "../../shared/iconTypes/icons";
 
 const meta = {
   title: "Components/SpeedDial",
-  component: SpeedDialExample,
+  component: SpeedDial,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof SpeedDialExample>;
+} satisfies Meta<typeof SpeedDial>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Description = () => (
-  <div>
-    <p>if you want to use SpeedDial you must follow this action format:</p>
-    <pre>
-      {`const actions = [
+const actions = [
   {
     icon: "ArrowLeft" as const,
     name: "Go back",
@@ -33,29 +30,31 @@ const Description = () => (
     name: "Go up",
     onClick: () => alert("ArrowUp clicked"),
   },
-];`}
-    </pre>
-    <p>Always you have to add "as const" when you type the icon</p>
-  </div>
-);
-
-export const DescriptionStory: Story = {
-  render: () => <Description />,
-};
+];
 
 export const Content: Story = {
   args: {
     mode: "primary",
+    actions: actions,
+    speedDialIcon: "Plus",
   },
   argTypes: {
+    actions: {
+      description:
+        "Always add (as const) to the icon,\n" +
+        "example: {icon: 'ArrowLeft' as const,\n",
+    },
     mode: {
       control: {
         type: "select",
         options: ["primary", "secondary", "tertiary"],
       },
     },
+    speedDialIcon: {
+      control: {
+        type: "select",
+        options: IconsTypes.map((iconType) => iconType.type),
+      },
+    },
   },
 };
-
-Content.storyName = "Content";
-DescriptionStory.storyName = "Description";

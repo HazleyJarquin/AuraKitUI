@@ -9,12 +9,14 @@ import { Icon } from "../Icon";
 import { contentTypes } from "../../shared/iconTypes/icons";
 import { colors } from "../../theme/colors";
 
+type Action = {
+  icon: keyof typeof contentTypes;
+  name: string;
+  onClick: () => void;
+};
+
 interface SpeedDialIconProps {
-  actions: {
-    icon: keyof typeof contentTypes;
-    name: string;
-    onClick: () => void;
-  }[];
+  actions: Action[];
   speedDialIcon: keyof typeof contentTypes;
   mode?: "primary" | "secondary" | "tertiary";
   style?: React.CSSProperties;
@@ -50,7 +52,13 @@ export const SpeedDial = ({
   const iconColor = speedDialStyle[mode].color;
 
   return (
-    <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
+    <Box
+      sx={{
+        height: 320,
+        transform: "translateZ(0px)",
+        flexGrow: 1,
+      }}
+    >
       <Backdrop open={open} />
       <MUISpeedDial
         ariaLabel="SpeedDial"
@@ -71,7 +79,7 @@ export const SpeedDial = ({
         {actions.map((action) => (
           <MUISpeedDialAction
             key={action.name}
-            icon={<Icon name={action.icon} color={iconColor} />}
+            icon={<Icon name={action.icon} color={iconColor} size={20} />}
             tooltipTitle={action.name}
             onClick={action.onClick}
             FabProps={{

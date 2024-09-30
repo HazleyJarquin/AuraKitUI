@@ -18,15 +18,27 @@ export const Content: Story = {
     label: "Click me",
     onClick: () => alert("Button clicked"),
     mode: "primary",
+    disabled: false,
   },
   argTypes: {
-    onClick: { action: "clicked" },
+    label: {
+      control: "text",
+      description: "Texto mostrado en el botón",
+    },
+    onClick: {
+      action: "clicked",
+      description: "Función que se ejecuta al hacer click",
+    },
     mode: {
       control: {
         type: "select",
         options: ["primary", "secondary", "tertiary", "text"],
       },
+      description: "Estilo del botón (primario, secundario, etc.)",
     },
-    disabled: { control: "boolean" },
+    disabled: {
+      control: "boolean",
+      description: "Desactiva el botón",
+    },
   },
 };

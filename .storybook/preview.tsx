@@ -2,6 +2,7 @@ import React from "react";
 import type { Preview } from "@storybook/react";
 import { theme } from "../src/theme";
 import { ThemeProvider } from "@mui/material";
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -11,6 +12,7 @@ const preview: Preview = {
       },
     },
   },
+  tags: ["autodocs"],
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
