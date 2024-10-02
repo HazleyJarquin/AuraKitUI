@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { Icon } from "../Icon";
 import { colors } from "../../theme/colors";
-
+import React from "react";
 interface Props {
   onBackIconClick: () => void;
   backIconColor?: string;

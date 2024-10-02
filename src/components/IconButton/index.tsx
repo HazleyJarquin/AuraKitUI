@@ -2,7 +2,7 @@ import { IconButton as MUIIconButton } from "@mui/material";
 import { Icon } from "../Icon";
 import { contentTypes } from "../../shared/iconTypes/icons";
 import { colors } from "../../theme/colors";
-
+import React from "react";
 interface IconButtonProps {
   icon: keyof typeof contentTypes;
   iconSize?: number;

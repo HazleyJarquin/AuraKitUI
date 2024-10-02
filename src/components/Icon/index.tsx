@@ -1,7 +1,7 @@
 import React from "react";
 import { contentTypes, Icons } from "../../shared/iconTypes/icons";
 
-interface IconProps {
+export interface IconProps {
   name: keyof typeof contentTypes;
   size?: number;
   color?: string;

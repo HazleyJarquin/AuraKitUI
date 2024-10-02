@@ -1,11 +1,12 @@
-import { Button as MaterialButton, ButtonProps } from "@mui/material";
+import { Button as MaterialButton } from "@mui/material";
 import { styleMode, styleModeDisabled } from "./types";
-
-interface CustomButtonProps extends Omit<ButtonProps, "variant"> {
+import React from "react";
+interface Props {
   label: string;
   onClick: () => void;
   mode?: "primary" | "secondary" | "tertiary" | "text";
   style?: React.CSSProperties;
+  disabled?: boolean;
 }
 
 export const Button = ({
@@ -14,7 +15,7 @@ export const Button = ({
   mode = "primary",
   style = {},
   disabled,
-}: CustomButtonProps) => {
+}: Props) => {
   return (
     <MaterialButton
       onClick={onClick}
