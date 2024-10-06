@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 
 import { IoPerson } from "react-icons/io5";
+import { TbMoodSad } from "react-icons/tb";
 
 export const contentTypes = {
   Plus: "FaPlus",
@@ -23,6 +24,7 @@ export const contentTypes = {
   ArrowUp: "FaArrowUp",
   Eye: "FaEye",
   EyeSlash: "FaEyeSlash",
+  SadFace: "TbMoodSad",
 };
 
 export const IconsTypes = [
@@ -66,6 +68,10 @@ export const IconsTypes = [
     type: contentTypes.EyeSlash,
     icon: FaEyeSlash,
   },
+  {
+    type: contentTypes.SadFace,
+    icon: TbMoodSad,
+  },
 ];
 
 export const Icons = {
@@ -79,4 +85,5 @@ export const Icons = {
   [contentTypes.ArrowUp]: FaArrowUp,
   [contentTypes.Eye]: FaEye,
   [contentTypes.EyeSlash]: FaEyeSlash,
+  [contentTypes.SadFace]: TbMoodSad,
 };
