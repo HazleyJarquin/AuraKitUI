@@ -1,10 +1,13 @@
 import React from "react";
 import { Box, Modal as MUIModal } from "@mui/material";
+import { IconButton } from "../IconButton";
+import { colors } from "../../theme/colors";
 
 interface Props {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  title?: string;
 }
 
 const style = {
@@ -12,22 +15,38 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
+  width: 500,
+  bgcolor: "white",
+  borderRadius: "8px",
   p: 4,
 };
 
-export const Modal = ({ open, onClose, children }: Props) => {
+export const Modal = ({ open, onClose, children, title }: Props) => {
   return (
     <MUIModal
       open={open}
       onClose={onClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+      sx={{
+        backdropFilter: "blur(8px)",
+      }}
     >
-      <Box sx={style}>{children}</Box>
+      <Box sx={style}>
+        <Box
+          display="flex"
+          justifyContent={title ? "space-between" : "flex-end"}
+          alignItems="center"
+        >
+          {title && <h2 style={{ color: colors.accent["500"] }}>{title}</h2>}
+          <IconButton
+            icon="Close"
+            iconSize={24}
+            mode="quaternary"
+            iconColor={colors.accent["500"]}
+            onClick={onClose}
+          />
+        </Box>
+        <Box>{children}</Box>
+      </Box>
     </MUIModal>
   );
 };

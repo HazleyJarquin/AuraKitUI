@@ -5,7 +5,7 @@ import React from "react";
 interface Props {
   id?: string;
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
   mode?: "primary" | "secondary" | "tertiary" | "text";
   style?: React.CSSProperties;
   disabled?: boolean;

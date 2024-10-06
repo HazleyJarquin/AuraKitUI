@@ -10,7 +10,7 @@ import {
   FaEyeSlash,
 } from "react-icons/fa";
 
-import { IoPerson } from "react-icons/io5";
+import { IoPerson, IoClose } from "react-icons/io5";
 import { TbMoodSad } from "react-icons/tb";
 
 export const contentTypes = {
@@ -25,6 +25,7 @@ export const contentTypes = {
   Eye: "FaEye",
   EyeSlash: "FaEyeSlash",
   SadFace: "TbMoodSad",
+  Close: "IoClose",
 };
 
 export const IconsTypes = [
@@ -72,6 +73,10 @@ export const IconsTypes = [
     type: contentTypes.SadFace,
     icon: TbMoodSad,
   },
+  {
+    type: contentTypes.Close,
+    icon: IoClose,
+  },
 ];
 
 export const Icons = {
@@ -86,4 +91,5 @@ export const Icons = {
   [contentTypes.Eye]: FaEye,
   [contentTypes.EyeSlash]: FaEyeSlash,
   [contentTypes.SadFace]: TbMoodSad,
+  [contentTypes.Close]: IoClose,
 };

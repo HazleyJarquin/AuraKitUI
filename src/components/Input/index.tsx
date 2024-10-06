@@ -1,6 +1,7 @@
 import { InputAdornment, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Icon } from "../Icon";
+import { colors } from "../../theme/colors";
 
 interface Props {
   sx?: React.CSSProperties;
@@ -44,7 +45,7 @@ export const Input = ({
       label={label}
       variant="outlined"
       placeholder={placeholder}
-      style={{ color: "black" }}
+      style={{ color: "white" }}
       sx={{
         ...sx,
         width: "100%",
@@ -52,15 +53,26 @@ export const Input = ({
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
             border: "none",
-            borderBottom: "2px solid #a5f3fc",
-            color: "black",
+            borderBottom: `2px solid ${colors.accent["500"]}`,
+            color: "white",
           },
           "&:hover fieldset": {
-            borderBottom: "2px solid #67e8f9",
+            borderBottom: `2px solid ${colors.accent["500"]}`,
+            color: "white",
           },
           "&.Mui-focused fieldset": {
-            border: "2px solid #67e8f9",
+            border: `2px solid ${colors.accent["500"]}`,
+            color: colors.accent["500"],
           },
+        },
+        "& .MuiInputBase-input": {
+          color: colors.accent["500"],
+        },
+        "& .MuiInputLabel-root": {
+          color: colors.accent["500"],
+        },
+        "& .MuiInputLabel-root.Mui-focused": {
+          color: colors.accent["500"],
         },
       }}
       slotProps={{
