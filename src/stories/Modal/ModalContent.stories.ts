@@ -31,5 +31,15 @@ export const Content: Story = {
       type: { name: "boolean" },
       control: { type: "none" },
     },
+    title: {
+      description: "Title of the modal",
+      type: { name: "string" },
+      control: { type: "none" },
+    },
+    width: {
+      description: "Width of the modal",
+      type: { name: "string" },
+      control: { type: "none" },
+    },
   },
 };

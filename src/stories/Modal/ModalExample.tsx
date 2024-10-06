@@ -14,6 +14,7 @@ export const ModalExample = () => {
           onClose={() => setShowModal(false)}
           open={showModal}
           title="Add Todo"
+          width="50%"
         />
       )}
     </div>

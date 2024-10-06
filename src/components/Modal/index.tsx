@@ -8,20 +8,16 @@ interface Props {
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
+  width?: string;
 }
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 500,
-  bgcolor: "white",
-  borderRadius: "8px",
-  p: 4,
-};
-
-export const Modal = ({ open, onClose, children, title }: Props) => {
+export const Modal = ({
+  open,
+  onClose,
+  children,
+  title,
+  width = "30%",
+}: Props) => {
   return (
     <MUIModal
       open={open}
@@ -30,7 +26,18 @@ export const Modal = ({ open, onClose, children, title }: Props) => {
         backdropFilter: "blur(8px)",
       }}
     >
-      <Box sx={style}>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: width,
+          bgcolor: "white",
+          borderRadius: "8px",
+          p: 4,
+        }}
+      >
         <Box
           display="flex"
           justifyContent={title ? "space-between" : "flex-end"}
