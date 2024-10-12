@@ -16,6 +16,7 @@ interface Props {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const Input = ({
@@ -31,6 +32,7 @@ export const Input = ({
   value,
   onChange,
   onBlur,
+  onKeyDown,
 }: Props) => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
@@ -46,6 +48,7 @@ export const Input = ({
       variant="outlined"
       placeholder={placeholder}
       style={{ color: "white" }}
+      onKeyDown={onKeyDown}
       sx={{
         ...sx,
         width: "100%",

@@ -6,3 +6,4 @@ export { Navbar } from "./src/components/Navbar";
 export { SpeedDial } from "./src/components/SpeedDial";
 export { TaskList } from "./src/components/TaskList";
 export { Modal } from "./src/components/Modal";
+export { Avatar } from "./src/components/Avatar";
